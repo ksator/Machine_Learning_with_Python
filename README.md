@@ -36,8 +36,7 @@ In this repository, you will find:
 
 # Machine learning basics 
 
-Please read first the file [machine_learning_basics.pdf](machine_learning_basics.pdf)  
-It helps peoples with no machine learning background to better understand machine learning basics 
+The file [machine_learning_basics.pdf](machine_learning_basics.pdf) helps peoples with no machine learning background to better understand machine learning basics 
   
 ## Supervised learning  
 
