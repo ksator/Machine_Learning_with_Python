@@ -1,7 +1,7 @@
 # Documentation structure
 
 - [What to find in this repository](#what-to-find-in-this-repository)
-- [Machine learning basics](#machine-learning-basics)
+- [Machine learning 101](#machine-learning-101)
   - [Supervised learning](#supervised-learning)
   - [Unsupervised learning](#unsupervised-learning)
   - [Clustering](#clustering)   
@@ -27,16 +27,16 @@ This repository is about machine learning with Python
 
 In this repository, you will find: 
 - Python scripts about machine learning
-- The file [machine_learning_basics.pdf](machine_learning_basics.pdf)  
+- The file [machine_learning_101.pdf](machine_learning_101.pdf)  
   The purpose of this document is to help peoples with no machine learning background to better understand machine learning basics  
 - The file [3sigma.xlsx](3sigma.xlsx)   
   It computes the three-sigma rule 
 - The file [kmeans.xlsx](kmeans.xlsx)  
   It computes one iteration of k-means with k=2  
 
-# Machine learning basics 
+# Machine learning 101 
 
-The file [machine_learning_basics.pdf](machine_learning_basics.pdf) helps peoples with no machine learning background to better understand machine learning basics 
+The file [machine_learning_101.pdf](machine_learning_101.pdf) helps peoples with no machine learning background to better understand machine learning basics 
   
 ## Supervised learning  
 
