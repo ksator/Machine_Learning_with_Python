@@ -651,7 +651,7 @@ data type float64
 >>> tf.dtype
 dtype('float64')
 ```
-
+access to some elements
 ```
 >>> t = np.array ([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19])
 >>> t
@@ -661,7 +661,7 @@ array([0, 1, 2, 3, 4, 5])
 >>> t
 array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19])
 ```
-number of dimensions
+multi dimensions array
 ```
 >>> tf2d = np.array([[1.5, 2, 3], [4, 5, 6]])
 >>> tf2d
@@ -701,4 +701,6 @@ the model can be used to predict iris species on unseen data
 array([0, 0, 2, 2])
 >>> 
 ```
-so the model prediction is: the first two flowers belong to the iris setosa category, and the last 2 ones belong to the iris virginica category  
+so the model prediction is: 
+- the first two flowers belong to the iris setosa category 
+- the last 2 ones belong to the iris virginica category  
