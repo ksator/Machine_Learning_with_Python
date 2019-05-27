@@ -10,6 +10,7 @@
   - [Load the dataset](#load-the-dataset)
   - [Examine the dataset](#examine-the-dataset)
   - [Introduction to arrays](#introduction-to-arrays)
+  - [Graph the data set](#graph-the-data-set)
   - [Select an algorithm](#select-an-algorithm)
   - [measure the performance of prediction](#measure-the-performance-of-prediction)
     - [split randomly the data set into a train and a test subset](#split-randomly-the-data-set-into-a-train-and-a-test-subset)
