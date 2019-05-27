@@ -9,14 +9,14 @@
   - [iris flowers data set](#iris-flowers-data-set)  
   - [Load the dataset](#load-the-dataset)
   - [Examine the dataset](#examine-the-dataset)
+  - [Introduction to arrays](#introduction-to-arrays)
   - [Select an algorithm](#select-an-algorithm)
   - [measure the performance of prediction](#measure-the-performance-of-prediction)
     - [split randomly the data set into a train and a test subset](#split-randomly-the-data-set-into-a-train-and-a-test-subset)
     - [Fit the model](#fit-the-model)
     - [Evaluate the trained model performance](#evaluate-the-trained-model-performance)
     - [Use k-Fold Cross-Validation to better evaluate the trained model performance](#use-k-Fold-cross-validation-to-better-evaluate-the-trained-model-performance)
-  - [Introduction to arrays](#introduction-to-arrays)
-  - [Use the model with unseen data and make predictions](#use-the-model-with-unseen-data-and-make-predictions)
+    - [Use the model with unseen data and make predictions](#use-the-model-with-unseen-data-and-make-predictions)
 
 # What to find in this repository
 
@@ -295,6 +295,95 @@ Let’s say you are interested in the samples 10, 25, and 50
 array([0, 0, 1])
 ```
 
+
+## Introduction to arrays 
+
+We will use the numpy python library to handle arrays.  
+Arrays are used to store multiple values in one single variable.  
+An array is a kind of list.  
+All the elements in an array are the exact same type  
+
+```
+>>> import numpy as np
+```
+
+data type int64 
+```
+>>> ti = np.array([1, 2, 3, 4])
+>>> ti
+array([1, 2, 3, 4])
+>>> ti.dtype
+dtype('int64')
+>>> 
+```
+
+data type float64
+```  
+>>> tf = np.array([1.5, 2.5, 3.5, 4.5])
+>>> tf.dtype
+dtype('float64')
+```
+access to some elements
+```
+>>> t = np.array ([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19])
+>>> t
+array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19])
+>>> t[:6]
+array([0, 1, 2, 3, 4, 5])
+>>> t
+array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19])
+```
+multi dimensions array
+```
+>>> tf2d = np.array([[1.5, 2, 3], [4, 5, 6]])
+>>> tf2d
+array([[1.5, 2. , 3. ],
+       [4. , 5. , 6. ]])
+>>> tf2d.dtype
+dtype('float64')
+>>> tf2d.shape
+(2, 3)
+>>> tf2d.ndim
+2
+>>> tf2d.size
+6
+```
+random number (float) generation
+```
+>>> np.random.rand(10)
+array([0.67966246, 0.26205002, 0.02549579, 0.11316062, 0.87369288,
+       0.16210068, 0.51009515, 0.92700258, 0.6370769 , 0.06820358])
+>>> 
+>>> np.random.rand(3,2)
+array([[0.78813667, 0.92470323],
+       [0.63210563, 0.97820931],
+       [0.44739855, 0.03799558]])
+>>> 
+
+```
+
+## Graph the data set 
+
+```
+from sklearn.datasets import load_iris
+import matplotlib.pyplot as plt
+```
+load the data set
+```
+iris=load_iris()
+```
+Graph the sepal length 
+```
+# extract column 1 from the array 
+# iris.data[:,[0]]
+
+plt.plot(iris.data[:,[0]])
+plt.title('iris')  
+plt.ylabel('sepal length (cm)')
+plt.show(block=False)
+```
+![iris sepal length](sepal_length.png)  
+
 ## Select an algorithm
 
 Support vector machines (SVM) is a set of supervised learning methods.  
@@ -315,7 +404,6 @@ Create an instance of a linear SVC
 >>> clf = SVC(kernel='linear')
 ```
 clf is a variable (we choosed the name clf for classifier).  
-
 
 
 ## measure the performance of prediction 
@@ -622,72 +710,6 @@ SVC 10 fold cross validation standard deviation
 ```
 >>> svc_scores.std()
 0.04999999999999999
-```
-
-## Introduction to arrays 
-
-We will use the numpy python library to handle arrays.  
-Arrays are used to store multiple values in one single variable.  
-An array is a kind of list.  
-All the elements in an array are the exact same type  
-
-```
->>> import numpy as np
-```
-
-data type int64 
-```
->>> ti = np.array([1, 2, 3, 4])
->>> ti
-array([1, 2, 3, 4])
->>> ti.dtype
-dtype('int64')
->>> 
-```
-
-data type float64
-```  
->>> tf = np.array([1.5, 2.5, 3.5, 4.5])
->>> tf.dtype
-dtype('float64')
-```
-access to some elements
-```
->>> t = np.array ([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19])
->>> t
-array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19])
->>> t[:6]
-array([0, 1, 2, 3, 4, 5])
->>> t
-array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19])
-```
-multi dimensions array
-```
->>> tf2d = np.array([[1.5, 2, 3], [4, 5, 6]])
->>> tf2d
-array([[1.5, 2. , 3. ],
-       [4. , 5. , 6. ]])
->>> tf2d.dtype
-dtype('float64')
->>> tf2d.shape
-(2, 3)
->>> tf2d.ndim
-2
->>> tf2d.size
-6
-```
-random number (float) generation
-```
->>> np.random.rand(10)
-array([0.67966246, 0.26205002, 0.02549579, 0.11316062, 0.87369288,
-       0.16210068, 0.51009515, 0.92700258, 0.6370769 , 0.06820358])
->>> 
->>> np.random.rand(3,2)
-array([[0.78813667, 0.92470323],
-       [0.63210563, 0.97820931],
-       [0.44739855, 0.03799558]])
->>> 
-
 ```
 ## Use the model with unseen data and make predictions 
 
