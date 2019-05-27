@@ -22,13 +22,9 @@ This repository is about machine learning with Python
 
 In this repository, you will find: 
 - Python scripts about machine learning
-  These examples cover supervised learning, classification, and testing using k-Fold Cross-Validation
+  These examples cover supervised learning, classification, testing using k-Fold Cross-Validation, standard deviation ... 
 - The file [machine_learning_101.pdf](machine_learning_101.pdf)  
   The purpose of this document is to help peoples with no machine learning background to better understand machine learning basics  
-- The file [3sigma.xlsx](3sigma.xlsx)   
-  It computes the three-sigma rule 
-- The file [kmeans.xlsx](kmeans.xlsx)  
-  It computes one iteration of k-means with k=2  
 
 # Machine learning 101 
 
@@ -617,9 +613,9 @@ SVC 10 fold cross validation mean
 >>> svc_scores.mean()
 0.9833333333333334
 ```
-SVC 10 fold cross validation standart devaiation
+
+SVC 10 fold cross validation standard deviation
 ```
 >>> svc_scores.std()
 0.04999999999999999
 ```
-
