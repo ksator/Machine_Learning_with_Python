@@ -15,6 +15,8 @@
     - [Fit the model](#fit-the-model)
     - [Evaluate the trained model performance](#evaluate-the-trained-model-performance)
     - [Use k-Fold Cross-Validation to better evaluate the trained model performance](#use-k-Fold-cross-validation-to-better-evaluate-the-trained-model-performance)
+  - [Introduction to arrays](#introduction-to-arrays)
+  - [Use the model with unseen data and make predictions](#use-the-model-with-unseen-data-and-make-predictions)
 
 # What to find in this repository
 
@@ -621,3 +623,82 @@ SVC 10 fold cross validation standard deviation
 >>> svc_scores.std()
 0.04999999999999999
 ```
+
+## Introduction to arrays 
+
+We will use the numpy python library to handle arrays.  
+Arrays are used to store multiple values in one single variable.  
+An array is a kind of list.  
+All the elements in an array are the exact same type  
+
+```
+>>> import numpy as np
+```
+
+data type int64 
+```
+>>> ti = np.array([1, 2, 3, 4])
+>>> ti
+array([1, 2, 3, 4])
+>>> ti.dtype
+dtype('int64')
+>>> 
+```
+
+data type float64
+```  
+>>> tf = np.array([1.5, 2.5, 3.5, 4.5])
+>>> tf.dtype
+dtype('float64')
+```
+
+```
+>>> t = np.array ([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19])
+>>> t
+array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19])
+>>> t[:6]
+array([0, 1, 2, 3, 4, 5])
+>>> t
+array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19])
+```
+number of dimensions
+```
+>>> tf2d = np.array([[1.5, 2, 3], [4, 5, 6]])
+>>> tf2d
+array([[1.5, 2. , 3. ],
+       [4. , 5. , 6. ]])
+>>> tf2d.dtype
+dtype('float64')
+>>> tf2d.shape
+(2, 3)
+>>> tf2d.ndim
+2
+>>> tf2d.size
+6
+```
+random number (float) generation
+```
+>>> np.random.rand(10)
+array([0.67966246, 0.26205002, 0.02549579, 0.11316062, 0.87369288,
+       0.16210068, 0.51009515, 0.92700258, 0.6370769 , 0.06820358])
+>>> 
+>>> np.random.rand(3,2)
+array([[0.78813667, 0.92470323],
+       [0.63210563, 0.97820931],
+       [0.44739855, 0.03799558]])
+>>> 
+
+```
+## Use the model with unseen data and make predictions 
+
+the model can be used to predict iris species on unseen data
+
+```
+>>> new_iris_flowers_observation =  np.array([[4.9, 3.1 , 1.4, 0.3], [4.7, 3.3, 1.4, 0.2], [6.3, 2.6, 5. , 1.8], [6.3, 3.4, 5.4, 2.2]])
+>>> 
+>>> y_pred = clf.predict(tr)
+>>> y_pred
+array([0, 0, 2, 2])
+>>> 
+```
+so the model prediction is: the first two flowers belong to the iris setosa category, and the last 2 ones belong to the iris virginica category  
