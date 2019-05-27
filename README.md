@@ -2,11 +2,6 @@
 
 - [What to find in this repository](#what-to-find-in-this-repository)
 - [Machine learning 101](#machine-learning-101)
-  - [Supervised learning](#supervised-learning)
-  - [Unsupervised learning](#unsupervised-learning)
-  - [Clustering](#clustering)   
-  - [Classification](#classification)    
-  - [k-Fold Cross-Validation (CV)](#k-fold-cross-validation-cv)
 - [scikit-learn python library](scikit-learn-python-library)  
   - [requirements](#requirements)  
   - [installation](#installation)  
@@ -27,6 +22,7 @@ This repository is about machine learning with Python
 
 In this repository, you will find: 
 - Python scripts about machine learning
+  These examples cover supervised learning, classification, and testing using k-Fold Cross-Validation
 - The file [machine_learning_101.pdf](machine_learning_101.pdf)  
   The purpose of this document is to help peoples with no machine learning background to better understand machine learning basics  
 - The file [3sigma.xlsx](3sigma.xlsx)   
@@ -37,62 +33,7 @@ In this repository, you will find:
 # Machine learning 101 
 
 The file [machine_learning_101.pdf](machine_learning_101.pdf) helps peoples with no machine learning background to better understand machine learning basics 
-  
-## Supervised learning  
 
-The machine learning algorithm learns on a labeled dataset
-
-## Unsupervised learning
-
-The machine learning uses unlabeled dataset.
-
-## Clustering
-
-Clustering uses unsupervised learning.  
-Clustering creates regions in space without being given any labels.  
-Clustering divides the data points into groups, such that data points in the same group are more similar to other data points in the same group and dissimilar to the data points in other groups.  Groups are basically a collection of data points based on their similarity  
-
-k-means clustering and DBSCAN are unsupervised clustering machine learning algorithms.
-They group the data that has not been previously labelled, classified or categorized.
-
-## Classification 
-
-Classification categorizes data points into the desired class.  
-There is a distinct number of classes.  
-Classes are sometimes called targets, labels or categories    
-
-Takes as input a training set and output a classifier which predict the class for any new data point  
-
-Classification uses supervised learning.  
-The machine learning algorithm learns on a labeled dataset  
-We know the labels from the training set 
-
-## k-Fold Cross-Validation (CV)
-
-CV can be used to test a model. It helps to estimate the model performance.  
-It gives an indication of how well the model generalizes to unseen data.  
-CV uses a single parameter called k.  
-It works like this:  
-it splits the dataset into k groups.  
-For each unique group:
-- Take the group as a test data set
-- Take the remaining groups as a training data set
-- Use the on the training set to build the model, and then use the test set and evaluate
-Example:
-A dataset 6 datapoints: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6]  
-The first step is to pick a value for k in order to determine the number of folds used to split the dataset.  
-Here, we will use a value of k=3.  
-so we split the dataset into 3 groups.  
-each group will have an equal number of 2 observations.
-
-For example:  
-Fold1: [0.5, 0.2]  
-Fold2: [0.1, 0.3]  
-Fold3: [0.4, 0.6]  
-Three models are built and evaluated.  
-Model1: Trained on Fold1 + Fold2, Tested on Fold3  
-Model2: Trained on Fold2 + Fold3, Tested on Fold1  
-Model3: Trained on Fold1 + Fold3, Tested on Fold2  
 
 # scikit-learn python library  
 
