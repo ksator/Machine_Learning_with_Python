@@ -9,9 +9,9 @@
   - [iris flowers data set](#iris-flowers-data-set)  
   - [Load the dataset](#load-the-dataset)
   - [Examine the dataset](#examine-the-dataset)
+  - [Select an algorithm](#select-an-algorithm)
   - [measure the performance of prediction](#measure-the-performance-of-prediction)
     - [split randomly the data set into a train and a test subset](#split-randomly-the-data-set-into-a-train-and-a-test-subset)
-    - [Select an algorithm](#select-an-algorithm)
     - [Fit the model](#fit-the-model)
     - [Evaluate the trained model performance](#evaluate-the-trained-model-performance)
     - [Use k-Fold Cross-Validation to better evaluate the trained model performance](#use-k-Fold-cross-validation-to-better-evaluate-the-trained-model-performance)
@@ -293,6 +293,29 @@ Let’s say you are interested in the samples 10, 25, and 50
 array([0, 0, 1])
 ```
 
+## Select an algorithm
+
+Support vector machines (SVM) is a set of supervised learning methods.  
+Support vector classifier (SVC) is a python class capable of performing classification on a dataset.  
+
+We will use SVC.  
+This classifier will: 
+- Find a linear separator. A line separating classes. A line separating (classifying) Iris setosa from Iris virginica from Iris versicolor.
+- There are many linear separators: It will choose the optimal one, i.e the one that maximizes our confidence, i.e the one that maximizes the geometrical margin, i.e the one that maximizes the distance between itself and the closest/nearest data point point
+
+From the module svm import the class SVC
+```
+>>> from sklearn.svm import SVC
+```
+
+Create an instance of a linear SVC
+```
+>>> clf = SVC(kernel='linear')
+```
+clf is a variable (we choosed the name clf for classifier).  
+
+
+
 ## measure the performance of prediction 
 
 To measure the performance of prediction, we will split the dataset into training and test sets.  
@@ -495,27 +518,6 @@ array([2, 0, 2, 1, 1, 1, 1, 0, 2, 0, 2, 2, 1, 2, 2, 1, 2, 0, 1, 2, 1, 0,
        0, 0, 1, 2, 2, 0, 1, 2, 1, 1, 0, 1, 0, 1, 0, 2, 0, 0, 2, 0, 2, 0,
        1, 1, 0, 0, 1, 2, 2, 2, 2])
 ```
-
-### Select an algorithm
-
-Support vector machines (SVM) is a set of supervised learning methods.  
-Support vector classifier (SVC) is a python class capable of performing classification on a dataset.  
-
-We will use SVC.  
-This classifier will: 
-- Find a linear separator. A line separating classes. A line separating (classifying) Iris setosa from Iris virginica from Iris versicolor.
-- There are many linear separators: It will choose the optimal one, i.e the one that maximizes our confidence, i.e the one that maximizes the geometrical margin, i.e the one that maximizes the distance between itself and the closest/nearest data point point
-
-From the module svm import the class SVC
-```
->>> from sklearn.svm import SVC
-```
-
-Create an instance of a linear SVC
-```
->>> clf = SVC(kernel='linear')
-```
-clf is a variable (we choosed the name clf for classifier).  
 
 ### Fit the model 
 
