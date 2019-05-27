@@ -2,7 +2,7 @@
 
 - [What to find in this repository](#what-to-find-in-this-repository)
 - [Machine learning 101](#machine-learning-101)
-- [scikit-learn python library](scikit-learn-python-library)  
+- [scikit-learn python library](#scikit-learn-python-library)  
   - [requirements](#requirements)  
   - [installation](#installation)  
 - [Machine learning demo with Python (iris flowers classification)](machine-learning-demo-with-python-iris-flowers-classification)
