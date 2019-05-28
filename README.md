@@ -2,9 +2,13 @@
 
 - [What to find in this repository](#what-to-find-in-this-repository)
 - [Machine learning 101](#machine-learning-101)
-- [scikit-learn python library](#scikit-learn-python-library)  
-  - [requirements](#requirements)  
-  - [installation](#installation)  
+- [Python libraries](#python-libraries)
+  - [scikit-learn](#scikit-learn)  
+    - [Overview](#overview)
+    - [Requirements](#requirements)  
+    - [Installation](#installation)
+  - [numpy](#numpy)
+  - [Matplotlib](#matplotlib)
 - [Machine learning demo with Python (iris flowers classification)](machine-learning-demo-with-python-iris-flowers-classification)
   - [iris flowers data set](#iris-flowers-data-set)  
   - [Load the dataset](#load-the-dataset)
@@ -33,19 +37,33 @@ In this repository, you will find:
 
 The file [machine_learning_101.pdf](machine_learning_101.pdf) helps peoples with no machine learning background to better understand machine learning basics 
 
+# Python libraries 
 
-# scikit-learn python library  
+## scikit-learn 
 
+### Overview 
 Scikit-Learn, also known as sklearn, is Python general-purpose machine learning library  
 Scikit-Learn is very versatile. 
 
-## Requirements 
+### Requirements 
 sklearn requires python 3  
 
-## Installation  
+### Installation  
 ```
 pip3 install sklearn
 ```
+
+## numpy
+
+Arrays are used to store multiple values in one single variable.  
+An array is a kind of list.  
+All the elements in an array are the exact same type  
+
+The numpy python library will be used to handle arrays  
+
+## matplotlib 
+
+matplotlib is a python plotting library
 
 # Machine learning demo with Python (iris flowers classification)  
 
