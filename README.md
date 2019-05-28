@@ -264,11 +264,14 @@ array([[5.4, 3.7, 1.5, 0.2],
 >>> 
 ```
 ### feature_names attribute
+
 ```
 >>> iris["feature_names"]
 ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)']
 ```
+
 ### target_names attribute 
+
 the meaning of the labels 
 ```
 >>> iris["target_names"]
@@ -279,6 +282,7 @@ array(['setosa', 'versicolor', 'virginica'], dtype='<U10')
 ['setosa', 'versicolor', 'virginica']
 ```
 ### target attribute 
+
 the classification labels 
 ```
 >>> iris["target"]
@@ -295,7 +299,6 @@ Let’s say you are interested in the samples 10, 25, and 50
 >>> iris.target[[10, 25, 50]]
 array([0, 0, 1])
 ```
-
 
 ## Introduction to arrays 
 
@@ -365,6 +368,7 @@ array([[0.78813667, 0.92470323],
 
 ## Graph the data set 
 
+Lets use the matplotlib python library to plot the data set  
 ```
 from sklearn.datasets import load_iris
 import matplotlib.pyplot as plt
@@ -405,7 +409,6 @@ Create an instance of a linear SVC
 >>> clf = SVC(kernel='linear')
 ```
 clf is a variable (we choosed the name clf for classifier).  
-
 
 ## measure the performance of prediction 
 
