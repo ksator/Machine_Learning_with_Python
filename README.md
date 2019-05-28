@@ -27,9 +27,10 @@
 
 This repository is about machine learning with Python  
 
+We will load a labeled dataset, examine the dataset, use a supervised classification algorithm, train it, evaluate the performance of the trained model, and use the trained model to make predictions.  
+ 
 In this repository, you will find: 
 - Python scripts about machine learning
-  These examples cover supervised learning, classification, testing using k-Fold Cross-Validation, standard deviation ... 
 - The file [machine_learning_101.pdf](machine_learning_101.pdf)  
   The purpose of this document is to help peoples with no machine learning background to better understand machine learning basics  
 
