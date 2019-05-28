@@ -299,10 +299,11 @@ array([0, 0, 1])
 
 ## Introduction to arrays 
 
-We will use the numpy python library to handle arrays.  
 Arrays are used to store multiple values in one single variable.  
 An array is a kind of list.  
 All the elements in an array are the exact same type  
+
+Let's use the numpy python library to handle arrays  
 
 ```
 >>> import numpy as np
