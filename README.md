@@ -9,7 +9,7 @@
     - [Installation](#installation)
   - [numpy](#numpy)
   - [Matplotlib](#matplotlib)
-- [Machine learning demo with Python (iris flowers classification)](machine-learning-demo-with-python-iris-flowers-classification)
+- [Machine learning demo with Python (iris flowers classification)](#machine-learning-demo-with-python-iris-flowers-classification)
   - [iris flowers data set](#iris-flowers-data-set)  
   - [Load the dataset](#load-the-dataset)
   - [Examine the dataset](#examine-the-dataset)
@@ -69,7 +69,10 @@ matplotlib is a python plotting library
 # Machine learning demo with Python (iris flowers classification)  
 
 The demo is about iris flowers classification.  
-We will use this example [accuracy_of_SVC.py](accuracy_of_SVC.py)  
+
+We will load a labeled dataset, examine the dataset, use a supervised classification algorithm, train it, evaluate the performance of the trained model, and use the trained model to make predictions.
+
+We will use this example [accuracy_of_SVC.py](accuracy_of_SVC.py) and this example [k_fold_cross_validation.py](k_fold_cross_validation.py)  
 
 ##  iris flowers data set  
 
