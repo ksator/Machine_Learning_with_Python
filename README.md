@@ -774,6 +774,13 @@ so the model prediction is:
 
 # visualize a dataset using seaborn 
 
+seaborn is a python data visualization library based on matplotlib  
+
+we will load the iris dataset  
+The iris dataset consists of measurements of three types of Iris flowers: Iris Setosa, Iris Versicolor, and Iris Virginica.  
+Four features were measured from each sample: the length and the width of the sepals and petals, in centimeters.  
+We will visualize the relationship between the 4 features for each of three species of Iris  
+
 ```
 >>> import seaborn as sns
 >>> import matplotlib.pyplot as plt
