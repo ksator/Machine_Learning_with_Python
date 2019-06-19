@@ -8,6 +8,7 @@
     - [Requirements](#requirements)  
     - [Installation](#installation)
   - [numpy](#numpy)
+  - [Pandas](#pandas)
   - [Matplotlib](#matplotlib)
   - [seaborn](#seaborn)
     - [Overview](#overview-1)
@@ -65,6 +66,10 @@ An array is a kind of list.
 All the elements in an array are the exact same type  
 
 The numpy python library will be used to handle arrays  
+
+## Pandas
+
+Pandas is a python library for data manipulation. So you can manipulate a dataset with Pandas 
 
 ## matplotlib 
 
