@@ -768,18 +768,44 @@ so the model prediction is:
 
 # visualize a dataset using seaborn 
 
+```
+>>> import seaborn as sns
+>>> import matplotlib.pyplot as plt
+>>> # load the iris dataset
+>>> iris = sns.load_dataset("iris")
+>>> # return the first 10 rows
+>>> iris.head(10)
+   sepal_length  sepal_width  petal_length  petal_width species
+0           5.1          3.5           1.4          0.2  setosa
+1           4.9          3.0           1.4          0.2  setosa
+2           4.7          3.2           1.3          0.2  setosa
+3           4.6          3.1           1.5          0.2  setosa
+4           5.0          3.6           1.4          0.2  setosa
+5           5.4          3.9           1.7          0.4  setosa
+6           4.6          3.4           1.4          0.3  setosa
+7           5.0          3.4           1.5          0.2  setosa
+8           4.4          2.9           1.4          0.2  setosa
+9           4.9          3.1           1.5          0.1  setosa
+>>> # visualize the relationship between the 4 features for each of three species of Iris
+>>> sns.pairplot(iris, hue='species', height=1.5)
+<seaborn.axisgrid.PairGrid object at 0x7fb899ed15f8>
+>>> plt.show()
+```
+
+![iris.png](iris.png)
 
 ```
-import seaborn as sns
-import matplotlib.pyplot as plt
-# load the iris dataset
-iris = sns.load_dataset("iris")
-# return the first 10 rows
-iris.head(10)
-# visualize the relationship between the 4 features for each of three species of Iris
-sns.pairplot(iris, hue='species', height=1.5)
-plt.show()
-```
-```
-$ ls seaborn-data 
+$ ls seaborn-data/
+iris.csv
+$ head -10 seaborn-data/iris.csv
+sepal_length,sepal_width,petal_length,petal_width,species
+5.1,3.5,1.4,0.2,setosa
+4.9,3.0,1.4,0.2,setosa
+4.7,3.2,1.3,0.2,setosa
+4.6,3.1,1.5,0.2,setosa
+5.0,3.6,1.4,0.2,setosa
+5.4,3.9,1.7,0.4,setosa
+4.6,3.4,1.4,0.3,setosa
+5.0,3.4,1.5,0.2,setosa
+4.4,2.9,1.4,0.2,setosa
 ```
