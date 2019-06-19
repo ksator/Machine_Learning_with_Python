@@ -10,6 +10,8 @@
   - [numpy](#numpy)
   - [Matplotlib](#matplotlib)
   - [seaborn](#seaborn)
+    - [Overview](#overview)
+    - [Installation](#installation)
 - [Machine learning demo with Python (iris flowers classification)](#machine-learning-demo-with-python-iris-flowers-classification)
   - [iris flowers data set](#iris-flowers-data-set)  
   - [Load the dataset](#load-the-dataset)
@@ -69,7 +71,13 @@ matplotlib is a python plotting library
 
 ## seaborn
 
+### Overview 
 seaborn is a python data visualization library based on matplotlib
+
+### Installation
+```
+pip3 install seaborn
+```
 
 # Machine learning demo with Python (iris flowers classification)  
 
@@ -758,3 +766,20 @@ so the model prediction is:
 - the first two flowers belong to the iris setosa category 
 - the last 2 ones belong to the iris virginica category  
 
+# visualize a dataset using seaborn 
+
+
+```
+import seaborn as sns
+import matplotlib.pyplot as plt
+# load the iris dataset
+iris = sns.load_dataset("iris")
+# return the first 10 rows
+iris.head(10)
+# visualize the relationship between the 4 features for each of three species of Iris
+sns.pairplot(iris, hue='species', height=1.5)
+plt.show()
+```
+```
+$ ls seaborn-data 
+```
