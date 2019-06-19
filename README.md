@@ -13,6 +13,8 @@
   - [seaborn](#seaborn)
     - [Overview](#overview-1)
     - [Installation](#installation-1)
+- [visualize a dataset using seaborn](#visualize-a-dataset-using-seaborn)  
+- [manipulate dataset with pandas](#manipulate-dataset-with-pandas)  
 - [Machine learning demo with Python (iris flowers classification)](#machine-learning-demo-with-python-iris-flowers-classification)
   - [iris flowers data set](#iris-flowers-data-set)  
   - [Load the dataset](#load-the-dataset)
@@ -26,7 +28,6 @@
     - [Evaluate the trained model performance](#evaluate-the-trained-model-performance)
     - [Use k-Fold Cross-Validation to better evaluate the trained model performance](#use-k-Fold-cross-validation-to-better-evaluate-the-trained-model-performance)
   - [Use the model with unseen data and make predictions](#use-the-model-with-unseen-data-and-make-predictions)
-- [visualize a dataset using seaborn](#visualize-a-dataset-using-seaborn)
 
 # What to find in this repository
 
@@ -84,6 +85,410 @@ seaborn is a python data visualization library based on matplotlib
 ```
 pip3 install seaborn
 ```
+
+# visualize a dataset using seaborn 
+
+seaborn is a python data visualization library based on matplotlib  
+
+we will load the iris dataset  
+The iris dataset consists of measurements of three types of Iris flowers: Iris Setosa, Iris Versicolor, and Iris Virginica.  
+Four features were measured from each sample: the length and the width of the sepals and petals, in centimeters.  
+We will visualize the relationship between the 4 features for each of three species of Iris  
+
+```
+>>> import seaborn as sns
+>>> import matplotlib.pyplot as plt
+>>> # load the iris dataset
+>>> iris = sns.load_dataset("iris")
+>>> # return the first 10 rows
+>>> iris.head(10)
+   sepal_length  sepal_width  petal_length  petal_width species
+0           5.1          3.5           1.4          0.2  setosa
+1           4.9          3.0           1.4          0.2  setosa
+2           4.7          3.2           1.3          0.2  setosa
+3           4.6          3.1           1.5          0.2  setosa
+4           5.0          3.6           1.4          0.2  setosa
+5           5.4          3.9           1.7          0.4  setosa
+6           4.6          3.4           1.4          0.3  setosa
+7           5.0          3.4           1.5          0.2  setosa
+8           4.4          2.9           1.4          0.2  setosa
+9           4.9          3.1           1.5          0.1  setosa
+>>> # visualize the relationship between the 4 features for each of three species of Iris
+>>> sns.pairplot(iris, hue='species', height=1.5)
+<seaborn.axisgrid.PairGrid object at 0x7fb899ed15f8>
+>>> plt.show()
+```
+
+![iris.png](iris.png)
+
+```
+$ ls seaborn-data/
+iris.csv
+$ head -10 seaborn-data/iris.csv
+sepal_length,sepal_width,petal_length,petal_width,species
+5.1,3.5,1.4,0.2,setosa
+4.9,3.0,1.4,0.2,setosa
+4.7,3.2,1.3,0.2,setosa
+4.6,3.1,1.5,0.2,setosa
+5.0,3.6,1.4,0.2,setosa
+5.4,3.9,1.7,0.4,setosa
+4.6,3.4,1.4,0.3,setosa
+5.0,3.4,1.5,0.2,setosa
+4.4,2.9,1.4,0.2,setosa
+```
+# manipulate dataset with pandas  
+Pandas is a python library for data manipulation
+
+```
+>>> import pandas as pd
+```
+```
+>>> bear_family = [
+...     [100, 5  , 20, 80],
+...     [50 , 2.5, 10, 40],
+...     [110, 6  , 22, 80]]
+>>> bear_family
+[[100, 5, 20, 80], [50, 2.5, 10, 40], [110, 6, 22, 80]]
+>>> type(bear_family)
+<class 'list'>
+```
+use the DataFrame class
+```
+>>> bear_family_df = pd.DataFrame(bear_family)
+>>> type(bear_family_df)
+<class 'pandas.core.frame.DataFrame'>
+>>> bear_family_df
+     0    1   2   3
+0  100  5.0  20  80
+1   50  2.5  10  40
+2  110  6.0  22  80
+```
+We can specify column and row names
+```
+>>> bear_family_df = pd.DataFrame(bear_family, index = ['mom', 'baby', 'dad'], columns = ['leg', 'hair','tail', 'belly'])
+>>> bear_family_df
+      leg  hair  tail  belly
+mom   100   5.0    20     80
+baby   50   2.5    10     40
+dad   110   6.0    22     80
+```
+access the leg column of the table
+```
+>>> bear_family_df.leg
+mom     100
+baby     50
+dad     110
+Name: leg, dtype: int64
+>>> bear_family_df["leg"]
+mom     100
+baby     50
+dad     110
+Name: leg, dtype: int64
+>>> bear_family_df["leg"].values
+array([100,  50, 110])
+```
+Let's now access dad bear: first by his position (2), then by his name "dad"
+```
+>>> bear_family_df.iloc[2]
+leg      110.0
+hair       6.0
+tail      22.0
+belly     80.0
+Name: dad, dtype: float64
+>>> bear_family_df.loc["dad"]
+leg      110.0
+hair       6.0
+tail      22.0
+belly     80.0
+Name: dad, dtype: float64
+```
+find out which bear has a leg of 110:
+```
+>>> bear_family_df["leg"] == 110
+mom     False
+baby    False
+dad      True
+Name: leg, dtype: bool
+```
+filter lines  
+select the bears that have a belly size of 80
+```
+>>> mask = bear_family_df["belly"] == 80
+>>> bears_80 = bear_family_df[mask]
+>>> bears_80
+     leg  hair  tail  belly
+mom  100   5.0    20     80
+dad  110   6.0    22     80
+```
+use the operator `~`  to select the bears that don't have a belly size of 80
+```
+>>> bear_family_df[~mask]
+      leg  hair  tail  belly
+baby   50   2.5    10     40
+
+```
+create a new dataframe with 2 new bears  
+use the same columns as bear_family_df  
+```
+>>> some_bears = pd.DataFrame([[105,4,19,80],[100,5,20,80]], columns = bear_family_df.columns) 
+>>> some_bears
+   leg  hair  tail  belly
+0  105     4    19     80
+1  100     5    20     80
+```
+assemble the two DataFrames together  
+```
+>>> all_bears = bear_family_df.append(some_bears)
+>>> all_bears
+      leg  hair  tail  belly
+mom   100   5.0    20     80
+baby   50   2.5    10     40
+dad   110   6.0    22     80
+0     105   4.0    19     80
+1     100   5.0    20     80
+```
+In the DataFrame all_bears, the first bear (mom) and the last bear have exactly the same measurements  
+drop duplicates  
+```
+>>> all_bears = all_bears.drop_duplicates()
+>>> all_bears
+      leg  hair  tail  belly
+mom   100   5.0    20     80
+baby   50   2.5    10     40
+dad   110   6.0    22     80
+0     105   4.0    19     80
+```
+get names of columns
+```
+>>> bear_family_df.columns
+Index(['leg', 'hair', 'tail', 'belly'], dtype='object')
+```
+create a new column to a DataFrame  
+mom and baby are female, dad is male  
+```
+>>> bear_family_df["sex"] = ["f", "f", "m"]
+>>> bear_family_df
+      leg  hair  tail  belly sex
+mom   100   5.0    20     80   f
+baby   50   2.5    10     40   f
+dad   110   6.0    22     80   m
+```
+get the number of items  
+```
+>>> len(bear_family_df)
+3
+```
+get the distinct values for a columns
+```
+>>> bear_family_df.belly.unique()
+array([80, 40])
+```
+read a csv file with Pandas
+```
+>>> import os
+>>> os.getcwd()
+'/home/ksator'
+>>> data = pd.read_csv("seaborn-data/iris.csv", sep=",")
+```
+load the titanic dataset
+```
+>>> import seaborn as sns
+>>> titanic = sns.load_dataset('titanic')
+```
+displays the first elements of the DataFrame
+```
+>>> titanic.head(5)
+   survived  pclass     sex   age  sibsp  parch     fare embarked  class    who  adult_male deck  embark_town alive  alone
+0         0       3    male  22.0      1      0   7.2500        S  Third    man        True  NaN  Southampton    no  False
+1         1       1  female  38.0      1      0  71.2833        C  First  woman       False    C    Cherbourg   yes  False
+2         1       3  female  26.0      0      0   7.9250        S  Third  woman       False  NaN  Southampton   yes   True
+3         1       1  female  35.0      1      0  53.1000        S  First  woman       False    C  Southampton   yes  False
+4         0       3    male  35.0      0      0   8.0500        S  Third    man        True  NaN  Southampton    no   True
+>>> titanic.age.head(5)
+0    22.0
+1    38.0
+2    26.0
+3    35.0
+4    35.0
+Name: age, dtype: float64
+```
+displays the latest elements of the DataFrame.
+```
+>>> titanic.tail(5)
+     survived  pclass     sex   age  sibsp  parch   fare embarked   class    who  adult_male deck  embark_town alive  alone
+886         0       2    male  27.0      0      0  13.00        S  Second    man        True  NaN  Southampton    no   True
+887         1       1  female  19.0      0      0  30.00        S   First  woman       False    B  Southampton   yes   True
+888         0       3  female   NaN      1      2  23.45        S   Third  woman       False  NaN  Southampton    no  False
+889         1       1    male  26.0      0      0  30.00        C   First    man        True    C    Cherbourg   yes   True
+890         0       3    male  32.0      0      0   7.75        Q   Third    man        True  NaN   Queenstown    no   True
+>>> titanic.age.tail(5)
+886    27.0
+887    19.0
+888     NaN
+889    26.0
+890    32.0
+Name: age, dtype: float64
+```
+
+returns the unique values present in a Pandas data structure.
+```
+>>> titanic.age.unique()
+array([22.  , 38.  , 26.  , 35.  ,   nan, 54.  ,  2.  , 27.  , 14.  ,
+        4.  , 58.  , 20.  , 39.  , 55.  , 31.  , 34.  , 15.  , 28.  ,
+        8.  , 19.  , 40.  , 66.  , 42.  , 21.  , 18.  ,  3.  ,  7.  ,
+       49.  , 29.  , 65.  , 28.5 ,  5.  , 11.  , 45.  , 17.  , 32.  ,
+       16.  , 25.  ,  0.83, 30.  , 33.  , 23.  , 24.  , 46.  , 59.  ,
+       71.  , 37.  , 47.  , 14.5 , 70.5 , 32.5 , 12.  ,  9.  , 36.5 ,
+       51.  , 55.5 , 40.5 , 44.  ,  1.  , 61.  , 56.  , 50.  , 36.  ,
+       45.5 , 20.5 , 62.  , 41.  , 52.  , 63.  , 23.5 ,  0.92, 43.  ,
+       60.  , 10.  , 64.  , 13.  , 48.  ,  0.75, 53.  , 57.  , 80.  ,
+       70.  , 24.5 ,  6.  ,  0.67, 30.5 ,  0.42, 34.5 , 74.  ])
+```
+
+The method `describe` provides various statistics (average, maximum, minimum, etc.) on the data in each column  
+```
+>>> titanic.describe(include="all")
+          survived      pclass   sex         age       sibsp       parch        fare embarked  class  who adult_male deck  embark_town alive alone
+count   891.000000  891.000000   891  714.000000  891.000000  891.000000  891.000000      889    891  891        891  203          889   891   891
+unique         NaN         NaN     2         NaN         NaN         NaN         NaN        3      3    3          2    7            3     2     2
+top            NaN         NaN  male         NaN         NaN         NaN         NaN        S  Third  man       True    C  Southampton    no  True
+freq           NaN         NaN   577         NaN         NaN         NaN         NaN      644    491  537        537   59          644   549   537
+mean      0.383838    2.308642   NaN   29.699118    0.523008    0.381594   32.204208      NaN    NaN  NaN        NaN  NaN          NaN   NaN   NaN
+std       0.486592    0.836071   NaN   14.526497    1.102743    0.806057   49.693429      NaN    NaN  NaN        NaN  NaN          NaN   NaN   NaN
+min       0.000000    1.000000   NaN    0.420000    0.000000    0.000000    0.000000      NaN    NaN  NaN        NaN  NaN          NaN   NaN   NaN
+25%       0.000000    2.000000   NaN   20.125000    0.000000    0.000000    7.910400      NaN    NaN  NaN        NaN  NaN          NaN   NaN   NaN
+50%       0.000000    3.000000   NaN   28.000000    0.000000    0.000000   14.454200      NaN    NaN  NaN        NaN  NaN          NaN   NaN   NaN
+75%       1.000000    3.000000   NaN   38.000000    1.000000    0.000000   31.000000      NaN    NaN  NaN        NaN  NaN          NaN   NaN   NaN
+max       1.000000    3.000000   NaN   80.000000    8.000000    6.000000  512.329200      NaN    NaN  NaN        NaN  NaN          NaN   NaN   NaN
+```
+NaN stands for Not a Number
+```
+>>> titanic.age.head(10)
+0    22.0
+1    38.0
+2    26.0
+3    35.0
+4    35.0
+5     NaN
+6    54.0
+7     2.0
+8    27.0
+9    14.0
+Name: age, dtype: float64
+```
+use the fillna method to replace  NaN  with other values  
+This returns a DataFrame where all  NaN  in the age column have been replaced by 0.
+```
+>>> titanic.fillna(value={"age": 0}).age.head(10)
+0    22.0
+1    38.0
+2    26.0
+3    35.0
+4    35.0
+5     0.0
+6    54.0
+7     2.0
+8    27.0
+9    14.0
+Name: age, dtype: float64
+```
+This returns a DataFrame where all  NaN  in the age column have been replaced with the previous values 
+```
+>>> titanic.fillna(method="pad").age.head(10)
+0    22.0
+1    38.0
+2    26.0
+3    35.0
+4    35.0
+5    35.0
+6    54.0
+7     2.0
+8    27.0
+9    14.0
+Name: age, dtype: float64
+```
+use the dropna method to delete columns or rows/lines that contain NaN    
+By default, it deletes the lines that contain NaN  
+```
+>>>
+>>> titanic.dropna().head(10)
+    survived  pclass     sex   age  sibsp  parch      fare embarked   class    who  adult_male deck  embark_town alive  alone
+1          1       1  female  38.0      1      0   71.2833        C   First  woman       False    C    Cherbourg   yes  False
+3          1       1  female  35.0      1      0   53.1000        S   First  woman       False    C  Southampton   yes  False
+6          0       1    male  54.0      0      0   51.8625        S   First    man        True    E  Southampton    no   True
+10         1       3  female   4.0      1      1   16.7000        S   Third  child       False    G  Southampton   yes  False
+11         1       1  female  58.0      0      0   26.5500        S   First  woman       False    C  Southampton   yes   True
+21         1       2    male  34.0      0      0   13.0000        S  Second    man        True    D  Southampton   yes   True
+23         1       1    male  28.0      0      0   35.5000        S   First    man        True    A  Southampton   yes   True
+27         0       1    male  19.0      3      2  263.0000        S   First    man        True    C  Southampton    no  False
+52         1       1  female  49.0      1      0   76.7292        C   First  woman       False    D    Cherbourg   yes  False
+54         0       1    male  65.0      0      1   61.9792        C   First    man        True    B    Cherbourg    no  False
+```
+we can also delete the columns that contain NaN
+```
+>>> titanic.dropna(axis="columns").head()
+   survived  pclass     sex  sibsp  parch     fare  class    who  adult_male alive  alone
+0         0       3    male      1      0   7.2500  Third    man        True    no  False
+1         1       1  female      1      0  71.2833  First  woman       False   yes  False
+2         1       3  female      0      0   7.9250  Third  woman       False   yes   True
+3         1       1  female      1      0  53.1000  First  woman       False   yes  False
+4         0       3    male      0      0   8.0500  Third    man        True    no   True
+```
+rename a column
+```
+>>> titanic.rename(columns={"sex":"gender"}).head(5)
+   survived  pclass  gender   age  sibsp  parch     fare embarked  class    who  adult_male deck  embark_town alive  alone
+0         0       3    male  22.0      1      0   7.2500        S  Third    man        True  NaN  Southampton    no  False
+1         1       1  female  38.0      1      0  71.2833        C  First  woman       False    C    Cherbourg   yes  False
+2         1       3  female  26.0      0      0   7.9250        S  Third  woman       False  NaN  Southampton   yes   True
+3         1       1  female  35.0      1      0  53.1000        S  First  woman       False    C  Southampton   yes  False
+4         0       3    male  35.0      0      0   8.0500        S  Third    man        True  NaN  Southampton    no   True
+```
+
+delete the line with an index equal to 0.
+```
+>>> titanic.drop(0)
+```
+Deletes the column "age" 
+```
+>>> titanic.drop(columns=["age"])
+```
+see the distribution of survivors by gender and ticket type  
+the column survived uses 0s and 1s (0 means died and 1 means survived)   
+the result is an average  
+so 50% of females in third class died  
+```
+>>> titanic.pivot_table('survived', index='sex', columns='class')
+class      First    Second     Third
+sex
+female  0.968085  0.921053  0.500000
+male    0.368852  0.157407  0.135447
+```
+get the total number of survivors in each case    
+the column survived uses 0s and 1s  
+lets use the sum function  
+```
+>>> titanic.pivot_table('survived', index='sex', columns='class', aggfunc="sum")
+class   First  Second  Third
+sex
+female     91      70     72
+male       45      17     47
+```
+remove the lines with NaN  
+group the ages into three categories  
+use the cut function to segment data values  
+```
+>>> titanic.dropna(inplace=True)
+>>> age = pd.cut(titanic['age'], [0, 18, 80])
+>>> titanic.pivot_table('survived', ['sex', age], 'class')
+class               First    Second     Third
+sex    age
+female (0, 18]   0.909091  1.000000  0.500000
+       (18, 80]  0.968254  0.875000  0.666667
+male   (0, 18]   0.800000  1.000000  1.000000
+       (18, 80]  0.397436  0.333333  0.250000
+```
+
 
 # Machine learning demo with Python (iris flowers classification)  
 
@@ -772,53 +1177,3 @@ so the model prediction is:
 - the first two flowers belong to the iris setosa category 
 - the last 2 ones belong to the iris virginica category  
 
-# visualize a dataset using seaborn 
-
-seaborn is a python data visualization library based on matplotlib  
-
-we will load the iris dataset  
-The iris dataset consists of measurements of three types of Iris flowers: Iris Setosa, Iris Versicolor, and Iris Virginica.  
-Four features were measured from each sample: the length and the width of the sepals and petals, in centimeters.  
-We will visualize the relationship between the 4 features for each of three species of Iris  
-
-```
->>> import seaborn as sns
->>> import matplotlib.pyplot as plt
->>> # load the iris dataset
->>> iris = sns.load_dataset("iris")
->>> # return the first 10 rows
->>> iris.head(10)
-   sepal_length  sepal_width  petal_length  petal_width species
-0           5.1          3.5           1.4          0.2  setosa
-1           4.9          3.0           1.4          0.2  setosa
-2           4.7          3.2           1.3          0.2  setosa
-3           4.6          3.1           1.5          0.2  setosa
-4           5.0          3.6           1.4          0.2  setosa
-5           5.4          3.9           1.7          0.4  setosa
-6           4.6          3.4           1.4          0.3  setosa
-7           5.0          3.4           1.5          0.2  setosa
-8           4.4          2.9           1.4          0.2  setosa
-9           4.9          3.1           1.5          0.1  setosa
->>> # visualize the relationship between the 4 features for each of three species of Iris
->>> sns.pairplot(iris, hue='species', height=1.5)
-<seaborn.axisgrid.PairGrid object at 0x7fb899ed15f8>
->>> plt.show()
-```
-
-![iris.png](iris.png)
-
-```
-$ ls seaborn-data/
-iris.csv
-$ head -10 seaborn-data/iris.csv
-sepal_length,sepal_width,petal_length,petal_width,species
-5.1,3.5,1.4,0.2,setosa
-4.9,3.0,1.4,0.2,setosa
-4.7,3.2,1.3,0.2,setosa
-4.6,3.1,1.5,0.2,setosa
-5.0,3.6,1.4,0.2,setosa
-5.4,3.9,1.7,0.4,setosa
-4.6,3.4,1.4,0.3,setosa
-5.0,3.4,1.5,0.2,setosa
-4.4,2.9,1.4,0.2,setosa
-```
