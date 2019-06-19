@@ -9,6 +9,7 @@
     - [Installation](#installation)
   - [numpy](#numpy)
   - [Matplotlib](#matplotlib)
+  - [seaborn](#seaborn)
 - [Machine learning demo with Python (iris flowers classification)](#machine-learning-demo-with-python-iris-flowers-classification)
   - [iris flowers data set](#iris-flowers-data-set)  
   - [Load the dataset](#load-the-dataset)
@@ -65,6 +66,10 @@ The numpy python library will be used to handle arrays
 ## matplotlib 
 
 matplotlib is a python plotting library
+
+## seaborn
+
+seaborn is a python data visualization library based on matplotlib
 
 # Machine learning demo with Python (iris flowers classification)  
 
@@ -752,3 +757,4 @@ array([0, 0, 2, 2])
 so the model prediction is: 
 - the first two flowers belong to the iris setosa category 
 - the last 2 ones belong to the iris virginica category  
+
