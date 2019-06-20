@@ -246,8 +246,9 @@ LinearSVC is a python class from Scikit Learn library
 ```
 
 LinearSVC performs classification.  
-LinearSVC finds a linear separator. A line separating classes. 
+LinearSVC finds a linear separator. A line separating classes.  
 There are many linear separators: It will choose the optimal one, i.e the one that maximizes our confidence, i.e the one that maximizes the geometrical margin, i.e the one that maximizes the distance between itself and the closest/nearest data point point  
+
 Support vectors are the data points, which are closest to the line  
 
 ![SVM.png](resources/SVM.png)  
@@ -255,8 +256,8 @@ Support vectors are the data points, which are closest to the line
 ## Support vector classifier
 
 Support vector machines (svm) is a set of supervised learning methods in the Scikit Learn library.  
-Support vector classifier (SVC) is a python class capable of performing classification on a dataset.
-The class SVC is in the module svm of the Scikit Learn library
+Support vector classifier (SVC) is a python class capable of performing classification on a dataset.  
+The class SVC is in the module svm of the Scikit Learn library  
 ```
 >>> from sklearn.svm import SVC
 >>> clf = SVC(kernel='linear')
@@ -271,9 +272,10 @@ SVC with parameter kernel='linear' finds the linear separator that maximizes the
 k-NN classification is used with a supervised learning set.  
 K is an integer.  
 To classify a new data point, this algorithm calculates the distance between the new data point and the other data points.   
-The distance can be Euclidean, Manhattan, .... 
+The distance can be Euclidean, Manhattan, ....  
 Once the algorithm knows the K closest neighbors of the new data point, it takes the most common class of these K closest neighbors, and assign that most common class to the new data point.  
-So the new data point is assigned to the most common class of its k nearest neighbors. the new data point is assigned to the class to which the majority of its K nearest neighbors belong to.  
+So the new data point is assigned to the most common class of its k nearest neighbors.  
+So the new data point is assigned to the class to which the majority of its K nearest neighbors belong to.  
 
 ![KNN.png](resources/KNN.png)
 
@@ -313,7 +315,7 @@ k ≤ n.
 
 A cluster is a group of data points.  
 Each cluster has a center, called the centroid.  
-A cluster centroid is the mean of a cluster (average across all the data points in the cluster).
+A cluster centroid is the mean of a cluster (average across all the data points in the cluster).  
 The radius of a cluster is the maximum distance between all the points and the centroid.  
 
 ![radius.png](resources/radius.png)  
