@@ -185,7 +185,7 @@ We will visualize the relationship between the 4 features for each of three spec
 >>> plt.show()
 ```
 
-![iris.png](iris.png)
+![iris.png](resources/iris.png)
 
 ```
 $ ls seaborn-data/
@@ -834,7 +834,7 @@ plt.title('iris')
 plt.ylabel('sepal length (cm)')
 plt.show(block=False)
 ```
-![iris sepal length](sepal_length.png)  
+![iris sepal length](resources/sepal_length.png)  
 
 ## Select an algorithm
 
