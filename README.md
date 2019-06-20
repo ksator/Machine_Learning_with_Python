@@ -41,8 +41,8 @@
     - [Evaluate the trained model performance](#evaluate-the-trained-model-performance)
     - [Use k-Fold Cross-Validation to better evaluate the trained model performance](#use-k-Fold-cross-validation-to-better-evaluate-the-trained-model-performance)
   - [Use the model with unseen data and make predictions](#use-the-model-with-unseen-data-and-make-predictions)  
--[Remove irrelevant features to reduce overfitting](#remove-irrelevant-features-to-reduce-overfitting)  
-  -[Recursive Feature Elimination](#recursive-feature-elimination)  
+- [Remove irrelevant features to reduce overfitting](#remove-irrelevant-features-to-reduce-overfitting)  
+  - [Recursive Feature Elimination](#recursive-feature-elimination)  
 
 
 # What to find in this repository
