@@ -1,7 +1,20 @@
 # Documentation structure
 
 - [What to find in this repository](#what-to-find-in-this-repository)
-- [Machine learning 101](#machine-learning-101)
+- [machine learning introduction](#machine-learning-introduction)  
+  - [Machine learning 101](#machine-learning-101)  
+  - [Supervised learning](#supervised-learning)  
+  - [Unsupervised learning](#unsupervised-learning)  
+  - [Clustering](#clustering)  
+  - [Classification](#classification)  
+  - [machine learning model](#machine-learning-model)  
+  - [k-Fold Cross-Validation](#k-fold-cross-validation)  
+  - [Signal vs Noise](#signal-vs-noise)  
+  - [Model fitting](#model-fitting)  
+  - [Overfitting](#overfitting)  
+  - [How to Detect Overfitting](#how-to-detect-overfitting)  
+  - [k-Fold Cross-Validation and overfitting](#k-fold-cross-validation-and-overfitting)  
+  - [How to Prevent Overfitting](#how-to-prevent-overfitting)  
 - [Python libraries](#python-libraries)
   - [scikit-learn](#scikit-learn)  
     - [Overview](#overview)
@@ -40,9 +53,136 @@ In this repository, you will find:
 - The file [machine_learning_101.pdf](machine_learning_101.pdf)  
   The purpose of this document is to help peoples with no machine learning background to better understand machine learning basics  
 
-# Machine learning 101 
+# machine learning introduction
+
+## Machine learning 101 
 
 The file [machine_learning_101.pdf](machine_learning_101.pdf) helps peoples with no machine learning background to better understand machine learning basics 
+
+## What is machine learning
+
+Machine Learning is the science of getting computers to learn from data to make decisions or predictions.  
+Machine learning is about teaching computers how to learn from data to make decisions or predictions.  
+
+True machine learning use algorithms to build a model based on a training set in order to make predictions or decisions without being explicitly programmed to perform the task
+
+##  Supervised learning
+
+The machine learning algorithm learns on a labeled dataset  
+
+The iris dataset and titanic dataset are labeled dataset  
+
+The iris dataset contains a set of 150 records under five attributes: petal length, petal width, sepal length, sepal width and species.  
+The iris dataset consists of measurements of three types of Iris flowers: Iris Setosa, Iris Versicolor, and Iris Virginica.  
+The data set consists of 50 samples from each of three species of Iris (Iris setosa, Iris virginica and Iris versicolor).  
+Four features were measured from each sample: the length and the width of the sepals and petals, in centimeters.  
+Based on the combination of these four features, we can distinguish the species  
+
+The Titanic has 2224 passengers on board, and more than 1500 died.  
+This dataset provides Passenger’s name, Passenger’s sex, Passenger’s age, Passenger’s class (1st, 2nd, 3rd ), Port of embarkation (Cherbourg, Queenstown, Southampton), .... and indicates if the passengers survived or died 
+
+## Unsupervised learning
+
+The machine learning uses unlabeled dataset.
+
+k-means clustering and DBSCAN are unsupervised clustering machine learning algorithms.  
+They group the data that has not been previously labelled, classified or categorized
+
+## Clustering
+
+Clustering uses unsupervised learning (dataset without label)
+Clustering creates regions in space without being given any labels.  
+Clustering divides the data points into groups, such that data points in the same group are more similar to other data points in the same group and dissimilar to the data points in other groups.  
+Groups are basically a collection of data points based on their similarity  
+
+k-means clustering and DBSCAN are unsupervised clustering machine learning algorithms.  
+They group the data that has not been previously labelled, classified or categorized.   
+
+## Classification 
+
+Classification categorizes data points into the desired class.  
+There is a distinct number of classes.  
+Classes are sometimes called targets, labels or categories.    
+Takes as input a training set and output a classifier which predict the class for any new data point.    
+
+Classification uses supervised learning.  
+The machine learning algorithm learns on a labeled dataset  
+We know the labels from the training set  
+
+## machine learning model
+
+Once a machine learning model is built with a training set, it can be used to process new data points to make predictions or decisions 
+
+## k-Fold Cross-Validation
+
+CV can be used to test a model.  
+It helps to estimate the model performance.  
+It gives an indication of how well the model generalizes to unseen data.  
+CV uses a single parameter called k.  
+It works like this:  
+it splits the dataset into k groups.  
+For each unique group:
+- Take the group as a test data set
+- Take the remaining groups as a training data set  
+- Use the on the training set to build the model, and then use the test set and evaluate  
+
+Example:  
+A dataset 6 datapoints: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6]  
+The first step is to pick a value for k in order to determine the number of folds used to split the dataset.  
+Here, we will use a value of k=3. so we split the dataset into 3 groups. each group will have an equal number of 2 observations.  
+
+For example:
+- Fold1: [0.5, 0.2]  
+- Fold2: [0.1, 0.3]  
+- Fold3: [0.4, 0.6]  
+
+Three models are built and evaluated:    
+- Model1: Trained on Fold1 + Fold2, Tested on Fold3   
+- Model2: Trained on Fold2 + Fold3, Tested on Fold1  
+- Model3: Trained on Fold1 + Fold3, Tested on Fold2  
+
+## Signal vs Noise
+
+The "signal" is the true underlying pattern that you wish to learn from the data. 
+"Noise", on the other hand, refers to the irrelevant information in a dataset.  
+
+The algorithm can end up "memorizing the noise" instead of finding the signal.  
+The model will then make predictions based on that noise.  
+So it will perform poorly on new/unseen data.  
+
+## Model fitting
+
+The sample data used to build the model should represents well the data you would expect to find in the actual population.  
+A model that is well-fitted produces more accurate outcomes.  
+A well fitted model will perform well on new/unseen data.  
+A well fitted model will generalize well from the training data to unseen data.  
+
+## Overfitting
+
+A model that has learned the noise instead of the signal is considered overfitted  
+This overfit model will then make predictions based on that noise.  
+It will perform poorly on new/unseen data.  
+The overfit model doesn’t generalize well from the training data to unseen data.
+
+## How to Detect Overfitting
+
+we can’t know how well a model will perform on new data until we actually test it.  
+To address this, we can split our initial dataset into separate training and test subsets.  
+- The training sets are used to build the models.  
+- The test sets are put aside as "unseen" data to evaluate the models.  
+This method will help to know of how well the model will perform on new data (i.e to estimate of our model's performance)  
+
+## k-Fold Cross-Validation and overfitting
+
+CV gives an indication of how well the model generalizes to unseen data.  
+CV does not prevent overfitting in itself, but it may help in identifying a case of overfitting.  
+It estimates the model on unseen data, using all the different parts of the training set as validation sets.  
+
+## How to Prevent Overfitting
+
+Detecting overfitting is useful, but it doesn’t solve the problem.  
+
+To prevent overfitting, train your algorithm with more data. It won’t work every time, but training with more data can help algorithms detect the signal and the noise better. Of course, that’s not always the case. If we just add more noisy data, this technique won’t help. That’s why you should always ensure your data is clean and relevant.
 
 # Python libraries 
 
