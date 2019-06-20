@@ -1,6 +1,17 @@
 # Documentation structure
 
 - [What to find in this repository](#what-to-find-in-this-repository)
+- [Python libraries](#python-libraries)
+  - [scikit-learn](#scikit-learn)  
+    - [Overview](#overview)
+    - [Requirements](#requirements)  
+    - [Installation](#installation)
+  - [numpy](#numpy)
+  - [Pandas](#pandas)
+  - [Matplotlib](#matplotlib)
+  - [seaborn](#seaborn)
+    - [Overview](#overview-1)
+    - [Installation](#installation-1)
 - [machine learning introduction](#machine-learning-introduction)  
   - [Supervised learning](#supervised-learning)  
   - [Unsupervised learning](#unsupervised-learning)  
@@ -14,17 +25,6 @@
   - [How to Detect Overfitting](#how-to-detect-overfitting)  
   - [k-Fold Cross-Validation and overfitting](#k-fold-cross-validation-and-overfitting)  
   - [How to Prevent Overfitting](#how-to-prevent-overfitting)  
-- [Python libraries](#python-libraries)
-  - [scikit-learn](#scikit-learn)  
-    - [Overview](#overview)
-    - [Requirements](#requirements)  
-    - [Installation](#installation)
-  - [numpy](#numpy)
-  - [Pandas](#pandas)
-  - [Matplotlib](#matplotlib)
-  - [seaborn](#seaborn)
-    - [Overview](#overview-1)
-    - [Installation](#installation-1)
 - [Introduction to arrays using numpy](#introduction-to-arrays-using-numpy)    
 - [visualize a dataset using seaborn](#visualize-a-dataset-using-seaborn)  
 - [manipulate dataset with pandas](#manipulate-dataset-with-pandas)  
@@ -54,6 +54,52 @@ In this repository, you will find:
 - Python scripts about machine learning
 - The file [machine_learning_101.pdf](machine_learning_101.pdf)  
   The purpose of this document is to help peoples with no machine learning background to better understand machine learning basics  
+
+
+# Python libraries 
+
+we will use the following libraries    
+
+## scikit-learn 
+
+### Overview 
+Scikit-Learn, also known as sklearn, is Python general-purpose machine learning library  
+Scikit-Learn is very versatile. 
+
+### Requirements 
+sklearn requires python 3  
+
+### Installation  
+```
+pip3 install sklearn
+```
+
+## numpy
+
+Arrays are used to store multiple values in one single variable.  
+An array is a kind of list.  
+All the elements in an array are the exact same type  
+
+The numpy python library will be used to handle arrays  
+
+## Pandas
+
+Pandas is a python library for data manipulation. So you can manipulate a dataset with Pandas 
+
+## matplotlib 
+
+matplotlib is a python plotting library
+
+## seaborn
+
+### Overview 
+seaborn is a python data visualization library based on matplotlib
+
+### Installation
+```
+pip3 install seaborn
+```
+
 
 # machine learning introduction
 
@@ -194,47 +240,104 @@ Examples:
 - The class `VarianceThreshold` removes the features with low variance. It removes the features with a variance lower than a configurable threshold.  
 - The class `RFE` (Recursive Feature Elimination) recursively removes features. It selects features by recursively considering smaller and smaller sets of features. It first trains the classifier on the initial set of features. it trains a classifier multiple times using smaller and smaller features set. After each training, the importance of the features is calculated and the least important feature is eliminated from current set of features. That procedure is recursively repeated until the desired number of features to select is eventually reached. RFE is able to find out the combination of features that contribute to the prediction. You just need to import RFE from sklearn.feature_selection and indicate the number of features to select and which classifier model to use.  
 
-# Python libraries 
+# machine learning algorithms
 
-## scikit-learn 
+## LinearSVC
 
-### Overview 
-Scikit-Learn, also known as sklearn, is Python general-purpose machine learning library  
-Scikit-Learn is very versatile. 
-
-### Requirements 
-sklearn requires python 3  
-
-### Installation  
+LinearSVC class from Scikit Learn library
 ```
-pip3 install sklearn
+>>> from sklearn.svm import LinearSVC
 ```
 
-## numpy
+LinearSVC performs classification.  
+LinearSVC finds a linear separator. A line separating classes. 
+There are many linear separators: It will choose the optimal one, i.e the one that maximizes our confidence, i.e the one that maximizes the geometrical margin, i.e the one that maximizes the distance between itself and the closest/nearest data point point  
+Support vectors are the data points, which are closest to the line  
 
-Arrays are used to store multiple values in one single variable.  
-An array is a kind of list.  
-All the elements in an array are the exact same type  
 
-The numpy python library will be used to handle arrays  
+## Support vector classifier
 
-## Pandas
-
-Pandas is a python library for data manipulation. So you can manipulate a dataset with Pandas 
-
-## matplotlib 
-
-matplotlib is a python plotting library
-
-## seaborn
-
-### Overview 
-seaborn is a python data visualization library based on matplotlib
-
-### Installation
+Support vector machines (svm) is a set of supervised learning methods in the Scikit Learn library.  
+Support vector classifier (SVC) is a python class capable of performing classification on a dataset.
+The class SVC is in the module svm of the Scikit Learn library
 ```
-pip3 install seaborn
+>>> from sklearn.svm import SVC
+>>> clf = SVC(kernel='linear')
 ```
+SVC with parameter kernel='linear' is similar to LinearSVC  
+
+The SVC classifier finds a linear separator. A line separating classes. 
+There are many linear separators: It will choose the optimal one, i.e the one that maximizes our confidence, i.e the one that maximizes the geometrical margin, i.e the one that maximizes the distance between itself and the closest/nearest data point point  
+Support vectors are the data points, which are closest to the line  
+
+SVC with parameter kernel='linear' 
+LinearSVC finds the linear separator that maximizes the distance between itself and the closest/nearest data point point
+
+
+## k-nearest neighbors
+
+k-NN classification is used with a supervised learning set.  
+K is an integer.  
+To classify a new data point, this algorithm calculates the distance between the new data point and the other data points.   
+The distance can be Euclidean, Manhattan, .... 
+Once it knows the K closest neighbors of the new data point, it takes the most common class of these K closest neighbors, and assign that most common class to the new data point.  
+So the new data point is assigned to the most common class of its k nearest neighbors. It is assigned to the class to which the majority of its k nearest neighbors belong to. 
+
+## DBSCAN 
+
+Density-Based Spatial Clustering of Applications with Noise  
+
+It is an unsupervised machine learning algorithm.  
+It is a density-based clustering algorithm.  
+It groups datapoints that are in regions with many nearby neighbors.  
+It groups datapoints in such a way that datapoints in the same cluster are more similar to each other than those in other clusters.  
+Clusters are dense groups of points.  
+Clusters are dense regions in the data space, separated by regions of lower density  
+If a point belongs to a cluster, it should be near to lots of other points in that cluster.  
+It marks datapoints in lower density regions as outliers.  
+It works like this:
+First, we choose two parameters, a number epsilon (distance) and a number minPoints (minimum cluster size).  
+epsilon is a letter of the Greek alphabet.  
+We then begin by picking an arbitrary point in our dataset.    
+If there are at least minPoints datapoints within a distance of epsilon from this datapoint, this is a high density region and a cluster is formed. i.e if there are more than minPoints points within a distance of epsilon from that point (including the original point itself), we consider all of them to be part of a "cluster".  
+We then expand that cluster by checking all of the new points and seeing if they too have more than minPoints points within a distance of epsilon, growing the cluster recursively if so.  
+Eventually, we run out of points to add to the cluster.  
+We then pick a new arbitrary point and repeat the process.   
+Now, it's entirely possible that a point we pick has fewer than minPoints points in its epsilon range, and is also not a part of any other cluster: in that case, it's considered a "noise point" (outlier) not belonging to any cluster.  
+epsilon and minPoints remain the same while the algorithm is running.  
+
+![]()  
+
+![]()  
+
+## k-means clustering
+
+k-means clustering splits N data points into K groups (called clusters).  
+k ≤ n.   
+
+![]()  
+
+A cluster is a group of data points.  
+Each cluster has a center, called the centroid.  
+A cluster centroid is the mean of a cluster (average across all the data points in the cluster).
+The radius of a cluster is the maximum distance between all the points and the centroid.  
+
+![]()  
+
+Distance between clusters = distance between centroids.  
+k-means clustering uses a basic iterative process.  
+k-means clustering splits N data points into K clusters.  
+Each data point will belong to a cluster.  
+This is based on the nearest centroid.  
+The objective is to find the most compact partitioning of the data set into k partitions.  
+k-means makes compacts clusters.  
+It minimizes the radius of clusters.  
+The objective is to minimize the variance within each cluster.  
+Clusters are well separated from each other.  
+It maximizes the average inter-cluster distance.  
+
+![]()  
+
 
 # Introduction to arrays using numpy
 
