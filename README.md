@@ -3,15 +3,10 @@
 - [What to find in this repository](#what-to-find-in-this-repository)
 - [Python libraries](#python-libraries)
   - [scikit-learn](#scikit-learn)  
-    - [Overview](#overview)
-    - [Requirements](#requirements)  
-    - [Installation](#installation)
   - [numpy](#numpy)
   - [Pandas](#pandas)
   - [Matplotlib](#matplotlib)
   - [seaborn](#seaborn)
-    - [Overview](#overview-1)
-    - [Installation](#installation-1)
 - [machine learning introduction](#machine-learning-introduction)  
   - [Supervised learning](#supervised-learning)  
   - [Unsupervised learning](#unsupervised-learning)  
@@ -25,6 +20,12 @@
   - [How to Detect Overfitting](#how-to-detect-overfitting)  
   - [k-Fold Cross-Validation and overfitting](#k-fold-cross-validation-and-overfitting)  
   - [How to Prevent Overfitting](#how-to-prevent-overfitting)  
+- [machine learning algorithms](#machine-learning-algorithms)
+  - [LinearSVC](#linearsvc)
+  - [Support vector classifier](#support-vector-classifier)
+  - [k-nearest neighbors](#k-nearest-neighbors)
+  - [DBSCAN](#dbscan)
+  - [k-means clustering](#k-means-clustering)
 - [Introduction to arrays using numpy](#introduction-to-arrays-using-numpy)    
 - [visualize a dataset using seaborn](#visualize-a-dataset-using-seaborn)  
 - [manipulate dataset with pandas](#manipulate-dataset-with-pandas)  
@@ -62,14 +63,11 @@ we will use the following libraries
 
 ## scikit-learn 
 
-### Overview 
 Scikit-Learn, also known as sklearn, is Python general-purpose machine learning library  
-Scikit-Learn is very versatile. 
+Scikit-Learn is very versatile.  
 
-### Requirements 
 sklearn requires python 3  
 
-### Installation  
 ```
 pip3 install sklearn
 ```
@@ -92,14 +90,11 @@ matplotlib is a python plotting library
 
 ## seaborn
 
-### Overview 
 seaborn is a python data visualization library based on matplotlib
 
-### Installation
 ```
 pip3 install seaborn
 ```
-
 
 # machine learning introduction
 
@@ -114,7 +109,8 @@ True machine learning use algorithms to build a model based on a training set in
 
 ##  Supervised learning
 
-The machine learning algorithm learns on a labeled dataset  
+The machine learning algorithm learns on a labeled dataset.  
+Learning by examples.  
 
 The iris dataset and titanic dataset are labeled dataset  
 
@@ -244,7 +240,7 @@ Examples:
 
 ## LinearSVC
 
-LinearSVC class from Scikit Learn library
+LinearSVC is a python class from Scikit Learn library
 ```
 >>> from sklearn.svm import LinearSVC
 ```
@@ -254,6 +250,7 @@ LinearSVC finds a linear separator. A line separating classes.
 There are many linear separators: It will choose the optimal one, i.e the one that maximizes our confidence, i.e the one that maximizes the geometrical margin, i.e the one that maximizes the distance between itself and the closest/nearest data point point  
 Support vectors are the data points, which are closest to the line  
 
+![SVM.png](resources/SVM.png)  
 
 ## Support vector classifier
 
@@ -266,12 +263,7 @@ The class SVC is in the module svm of the Scikit Learn library
 ```
 SVC with parameter kernel='linear' is similar to LinearSVC  
 
-The SVC classifier finds a linear separator. A line separating classes. 
-There are many linear separators: It will choose the optimal one, i.e the one that maximizes our confidence, i.e the one that maximizes the geometrical margin, i.e the one that maximizes the distance between itself and the closest/nearest data point point  
-Support vectors are the data points, which are closest to the line  
-
-SVC with parameter kernel='linear' 
-LinearSVC finds the linear separator that maximizes the distance between itself and the closest/nearest data point point
+SVC with parameter kernel='linear' finds the linear separator that maximizes the distance between itself and the closest/nearest data point   
 
 
 ## k-nearest neighbors
@@ -280,8 +272,10 @@ k-NN classification is used with a supervised learning set.
 K is an integer.  
 To classify a new data point, this algorithm calculates the distance between the new data point and the other data points.   
 The distance can be Euclidean, Manhattan, .... 
-Once it knows the K closest neighbors of the new data point, it takes the most common class of these K closest neighbors, and assign that most common class to the new data point.  
-So the new data point is assigned to the most common class of its k nearest neighbors. It is assigned to the class to which the majority of its k nearest neighbors belong to. 
+Once the algorithm knows the K closest neighbors of the new data point, it takes the most common class of these K closest neighbors, and assign that most common class to the new data point.  
+So the new data point is assigned to the most common class of its k nearest neighbors. the new data point is assigned to the class to which the majority of its K nearest neighbors belong to.  
+
+![KNN.png](resources/KNN.png)
 
 ## DBSCAN 
 
@@ -306,7 +300,7 @@ We then pick a new arbitrary point and repeat the process.
 Now, it's entirely possible that a point we pick has fewer than minPoints points in its epsilon range, and is also not a part of any other cluster: in that case, it's considered a "noise point" (outlier) not belonging to any cluster.  
 epsilon and minPoints remain the same while the algorithm is running.  
 
-![]()  
+![DBSCAN.png](resources/DBSCAN.png)  
 
 ![]()  
 
@@ -315,14 +309,14 @@ epsilon and minPoints remain the same while the algorithm is running.
 k-means clustering splits N data points into K groups (called clusters).  
 k ≤ n.   
 
-![]()  
+![kmeans.png](resources/kmeans.png)  
 
 A cluster is a group of data points.  
 Each cluster has a center, called the centroid.  
 A cluster centroid is the mean of a cluster (average across all the data points in the cluster).
 The radius of a cluster is the maximum distance between all the points and the centroid.  
 
-![]()  
+![radius.png](resources/radius.png)  
 
 Distance between clusters = distance between centroids.  
 k-means clustering uses a basic iterative process.  
