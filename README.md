@@ -1,12 +1,6 @@
 # Documentation structure
 
 - [What to find in this repository](#what-to-find-in-this-repository)
-- [Python libraries](#python-libraries)
-  - [scikit-learn](#scikit-learn)  
-  - [numpy](#numpy)
-  - [Pandas](#pandas)
-  - [Matplotlib](#matplotlib)
-  - [seaborn](#seaborn)
 - [machine learning introduction](#machine-learning-introduction)  
   - [Supervised learning](#supervised-learning)  
   - [labeled dataset examples](#labeled-dataset-examples)  
@@ -45,57 +39,6 @@
 - [Remove irrelevant features to reduce overfitting](#remove-irrelevant-features-to-reduce-overfitting)  
   - [Recursive Feature Elimination](#recursive-feature-elimination)  
 
-
-# What to find in this repository
-
-This repository is about machine learning with Python  
-
-We will load a labeled dataset, examine the dataset, use a supervised classification algorithm, train it, evaluate the performance of the trained model, and use the trained model to make predictions.  
- 
-In this repository, you will find: 
-- Python scripts about machine learning
-- The file [machine_learning_101.pdf](machine_learning_101.pdf)  
-  The purpose of this document is to help peoples with no machine learning background to better understand machine learning basics  
-
-
-# Python libraries 
-
-we will use the following libraries    
-
-## scikit-learn 
-
-Scikit-Learn, also known as sklearn, is Python general-purpose machine learning library  
-Scikit-Learn is very versatile.  
-
-sklearn requires python 3  
-
-```
-pip3 install sklearn
-```
-
-## numpy
-
-Arrays are used to store multiple values in one single variable.  
-An array is a kind of list.  
-All the elements in an array are the exact same type  
-
-The numpy python library will be used to handle arrays  
-
-## Pandas
-
-Pandas is a python library for data manipulation. So you can manipulate a dataset with Pandas 
-
-## matplotlib 
-
-matplotlib is a python plotting library
-
-## seaborn
-
-seaborn is a python data visualization library based on matplotlib
-
-```
-pip3 install seaborn
-```
 
 # machine learning introduction
 
