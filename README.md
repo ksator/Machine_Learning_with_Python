@@ -1178,3 +1178,56 @@ so the model prediction is:
 - the first two flowers belong to the iris setosa category 
 - the last 2 ones belong to the iris virginica category  
 
+# 
+
+Let's use RFE (Recursive Feature Elimination) with Scikit Learn to select the features to keep    
+
+Load LinearSVC class from Scikit Learn library  
+LinearSVC is similar to SVC with parameter kernel='linear'  
+LinearSVC performs classification  
+LinearSVC finds the linear separator that maximizes the distance between itself and the closest/nearest data point point  
+```
+>>> from sklearn.svm import LinearSVC
+```
+load RFE (Recursive Feature Elimination)  
+RFE is used to remove features  
+```
+>>> from sklearn.feature_selection import RFE
+```
+load the iris dataset  
+
+```
+from sklearn import datasets
+dataset = datasets.load_iris()
+```
+
+the dataset has 150 items, each item has 4 features (sepal length, sepal width, petal length, petal width)
+```
+>>> dataset.data.shape
+(150, 4)
+>>> dataset.feature_names
+['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)']
+```
+instanciate the LinearSVC class  
+```
+>>> svm = LinearSVC(max_iter=5000)
+```
+instanciate the RFE class  
+select the number of features to keep (3 in that example)
+select the classifier model to use
+```
+>>> rfe = RFE(svm, 3)
+```
+use the iris dataset and fit
+```
+rfe = rfe.fit(dataset.data, dataset.target)
+```
+print summaries for the selection of attributes
+```
+>>> print(rfe.support_)
+[False  True  True  True]
+>>> print(rfe.ranking_)
+[2 1 1 1]
+```
+So, sepal length is not selected.  
+The 3 selected features are sepal width, petal length, petal width.  
