@@ -1322,6 +1322,8 @@ so the model prediction is:
 
 Let's use RFE (Recursive Feature Elimination) with Scikit Learn to select the features to keep    
 
+We will use this example [recursive_feature_elimination.py](recursive_feature_elimination.py)  
+
 Load LinearSVC class from Scikit Learn library  
 LinearSVC is similar to SVC with parameter kernel='linear'  
 LinearSVC performs classification  
