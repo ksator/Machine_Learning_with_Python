@@ -294,6 +294,8 @@ array([[0.78813667, 0.92470323],
 
 # visualize a dataset using seaborn 
 
+we will use this example [iris_visualization.py](iris_visualization.py)  
+
 seaborn is a python data visualization library based on matplotlib  
 
 we will load the iris dataset  
