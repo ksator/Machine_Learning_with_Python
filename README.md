@@ -304,7 +304,7 @@ epsilon and minPoints remain the same while the algorithm is running.
 
 ![DBSCAN.png](resources/DBSCAN.png)  
 
-![]()  
+![DBSCAN_mouse.png](resources/DBSCAN_mouse.png)  
 
 ## k-means clustering
 
@@ -332,7 +332,7 @@ The objective is to minimize the variance within each cluster.
 Clusters are well separated from each other.  
 It maximizes the average inter-cluster distance.  
 
-![]()  
+![kmeans_mouse.png](resources/kmeans_mouse.png)  
 
 
 # Introduction to arrays using numpy
