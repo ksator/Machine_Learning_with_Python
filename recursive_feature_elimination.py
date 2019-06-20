@@ -14,7 +14,8 @@ dataset = datasets.load_iris()
 
 # the dataset has 150 items, each item has 4 features (sepal length, sepal width, petal length, petal width) 
 dataset.data.shape
-dataset.feature_names
+print ("list of features in the dataset:")
+print (dataset.feature_names)
 
 # instanciate the LinearSVC class   
 svm = LinearSVC(max_iter=5000)
@@ -29,6 +30,7 @@ rfe = rfe.fit(dataset.data, dataset.target)
 
 # print summaries for the selection of attributes
 # sepal length is not selected. The 3 selected features are sepal width, petal length, petal width 
+print ('selected features are:')
 print(rfe.support_)
 print(rfe.ranking_)
 
