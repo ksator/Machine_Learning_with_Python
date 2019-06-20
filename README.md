@@ -29,7 +29,7 @@
 - [Introduction to arrays using numpy](#introduction-to-arrays-using-numpy)    
 - [visualize a dataset using seaborn](#visualize-a-dataset-using-seaborn)  
 - [manipulate dataset with pandas](#manipulate-dataset-with-pandas)  
-- [iris flowers classification with python](#iris-flowers-classification-with-python)
+- [iris flowers classification](#iris-flowers-classification)
   - [iris flowers data set](#iris-flowers-data-set)  
   - [Load the dataset](#load-the-dataset)
   - [Examine the dataset](#examine-the-dataset)
@@ -40,7 +40,10 @@
     - [Fit the model](#fit-the-model)
     - [Evaluate the trained model performance](#evaluate-the-trained-model-performance)
     - [Use k-Fold Cross-Validation to better evaluate the trained model performance](#use-k-Fold-cross-validation-to-better-evaluate-the-trained-model-performance)
-  - [Use the model with unseen data and make predictions](#use-the-model-with-unseen-data-and-make-predictions)
+  - [Use the model with unseen data and make predictions](#use-the-model-with-unseen-data-and-make-predictions)  
+-[Remove irrelevant features to reduce overfitting](#remove-irrelevant-features-to-reduce-overfitting)  
+  -[Recursive Feature Elimination](#recursive-feature-elimination)  
+
 
 # What to find in this repository
 
@@ -183,6 +186,16 @@ It estimates the model on unseen data, using all the different parts of the trai
 Detecting overfitting is useful, but it doesn’t solve the problem.  
 
 To prevent overfitting, train your algorithm with more data. It won’t work every time, but training with more data can help algorithms detect the signal and the noise better. Of course, that’s not always the case. If we just add more noisy data, this technique won’t help. That’s why you should always ensure your data is clean and relevant.
+
+To prevent overfitting, improve the data by removing irrelevant features.   
+Not all features contribute to the prediction. Removing features of low importance can improve accuracy, and reduce overfitting. Training time can also be reduced.  
+Imagine a dataset with 300 columns and only 250 rows. That is a lot of features for only very few training samples. So, instead of using all features, it’s better to use only the most important ones. This will make the training process faster. It can help to prevent overfitting because the model doesn’t need to use all the features.    
+So, rank the features and elimate the less importantes ones. 
+
+The python library `scikit-learn` provides a `feature selection` module which helps identify the most relevant features of a dataset.  
+Examples:  
+- The class `VarianceThreshold` removes the features with low variance. It removes the features with a variance lower than a configurable threshold.  
+- The class `RFE` (Recursive Feature Elimination) recursively removes features. It selects features by recursively considering smaller and smaller sets of features. It first trains the classifier on the initial set of features. it trains a classifier multiple times using smaller and smaller features set. After each training, the importance of the features is calculated and the least important feature is eliminated from current set of features. That procedure is recursively repeated until the desired number of features to select is eventually reached. RFE is able to find out the combination of features that contribute to the prediction. You just need to import RFE from sklearn.feature_selection and indicate the number of features to select and which classifier model to use.  
 
 # Python libraries 
 
@@ -698,7 +711,7 @@ male   (0, 18]   0.800000  1.000000  1.000000
 ```
 
 
-# iris flowers classification with python
+# iris flowers classification
 
 The demo is about iris flowers classification.  
 
@@ -1320,11 +1333,17 @@ so the model prediction is:
 - the first two flowers belong to the iris setosa category 
 - the last 2 ones belong to the iris virginica category  
 
-# 
+# Remove irrelevant features to reduce overfitting 
 
-Let's use RFE (Recursive Feature Elimination) with Scikit Learn to select the features to keep    
+To prevent overfitting, improve the data by removing irrelevant features. 
 
-We will use this example [recursive_feature_elimination.py](recursive_feature_elimination.py)  
+## Recursive Feature Elimination
+
+The class `RFE` (Recursive Feature Elimination) from the `feature selection` module from the python library scikit-learn recursively removes features. It selects features by recursively considering smaller and smaller sets of features. It first trains the classifier on the initial set of features. It trains a classifier multiple times using smaller and smaller features set. After each training, the importance of the features is calculated and the least important feature is eliminated from current set of features. That procedure is recursively repeated until the desired number of features to select is eventually reached. RFE is able to find out the combination of features that contribute to the prediction. You just need to import RFE from sklearn.feature_selection and indicate which classifier model to use and the number of features to select.  
+
+Here's how you can use the class `RFE` in order to find out the combination of important features.  
+
+We will use this basic example [recursive_feature_elimination.py](recursive_feature_elimination.py)  
 
 Load LinearSVC class from Scikit Learn library  
 LinearSVC is similar to SVC with parameter kernel='linear'  
