@@ -9,6 +9,7 @@
   - [seaborn](#seaborn)
 - [machine learning introduction](#machine-learning-introduction)  
   - [Supervised learning](#supervised-learning)  
+  - [labeled dataset examples](#labeled-dataset-examples)  
   - [Unsupervised learning](#unsupervised-learning)  
   - [Clustering](#clustering)  
   - [Classification](#classification)  
@@ -112,6 +113,8 @@ True machine learning use algorithms to build a model based on a training set in
 The machine learning algorithm learns on a labeled dataset.  
 Learning by examples.  
 
+## labeled dataset examples
+
 The iris dataset and titanic dataset are labeled dataset  
 
 The iris dataset contains a set of 150 records under five attributes: petal length, petal width, sepal length, sepal width and species.  
@@ -150,6 +153,8 @@ Takes as input a training set and output a classifier which predict the class fo
 Classification uses supervised learning.  
 The machine learning algorithm learns on a labeled dataset  
 We know the labels from the training set  
+
+KNN (k-nearest neighbors) and Support vector classifier (SVC) are supervised learning algorithms for classification.    
 
 ## machine learning model
 
@@ -304,8 +309,6 @@ epsilon and minPoints remain the same while the algorithm is running.
 
 ![DBSCAN.png](resources/DBSCAN.png)  
 
-![DBSCAN_mouse.png](resources/DBSCAN_mouse.png)  
-
 ## k-means clustering
 
 k-means clustering splits N data points into K groups (called clusters).  
@@ -332,8 +335,9 @@ The objective is to minimize the variance within each cluster.
 Clusters are well separated from each other.  
 It maximizes the average inter-cluster distance.  
 
+k-means clusters tend to be of the same size. size refers to the area. size doesnt refer to the number od elements. Two clusters of the same area do not have to have the same number of elements (except if your data set has the same density)    
 ![kmeans_mouse.png](resources/kmeans_mouse.png)  
-
+The tendency of k-means to produce equal-sized clusters leads to bad results here 
 
 # Introduction to arrays using numpy
 
