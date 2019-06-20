@@ -2,7 +2,6 @@
 
 - [What to find in this repository](#what-to-find-in-this-repository)
 - [machine learning introduction](#machine-learning-introduction)  
-  - [Machine learning 101](#machine-learning-101)  
   - [Supervised learning](#supervised-learning)  
   - [Unsupervised learning](#unsupervised-learning)  
   - [Clustering](#clustering)  
@@ -57,8 +56,6 @@ In this repository, you will find:
   The purpose of this document is to help peoples with no machine learning background to better understand machine learning basics  
 
 # machine learning introduction
-
-## Machine learning 101 
 
 The file [machine_learning_101.pdf](machine_learning_101.pdf) helps peoples with no machine learning background to better understand machine learning basics 
 
