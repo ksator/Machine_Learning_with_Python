@@ -1,4 +1,4 @@
-Please visit the [wiki](https://github.com/ksator/Machine_Learning_with_Python/wiki)  
+Please visit the [wiki](https://github.com/ksator/Machine_Learning_with_Python/wiki) for the project documentation.    
 
 - [What to find in this repository](https://github.com/ksator/Machine_Learning_with_Python/wiki/What-to-find-in-this-repository)
 - [About the Python libraries used in this repo](https://github.com/ksator/Machine_Learning_with_Python/wiki/About-the-Python-libraries-used-in-this-repo)  
