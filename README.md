@@ -4,6 +4,7 @@ Please visit the [wiki](https://github.com/ksator/Machine_Learning_with_Python/w
 - [About the Python libraries used in this repo](https://github.com/ksator/Machine_Learning_with_Python/wiki/About-the-Python-libraries-used-in-this-repo)  
 - [Euclidean distance vs Manhattan distance](https://github.com/ksator/Machine_Learning_with_Python/wiki/Euclidean-distance-vs-Manhattan-distance)  
 - [machine learning introduction](https://github.com/ksator/Machine_Learning_with_Python/wiki/machine-learning-introduction)  
+- [machine learning algorithms overview](https://github.com/ksator/Machine_Learning_with_Python/wiki/machine-learning-algorithms-overview)  
 - [Introduction to arrays using numpy](https://github.com/ksator/Machine_Learning_with_Python/wiki/Introduction-to-arrays-using-numpy)  
 - [visualize a dataset using seaborn](https://github.com/ksator/Machine_Learning_with_Python/wiki/visualize-a-dataset-using-seaborn)  
 - [manipulate dataset with pandas](https://github.com/ksator/Machine_Learning_with_Python/wiki/manipulate-dataset-with-pandas)  
