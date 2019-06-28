@@ -1,4 +1,4 @@
-Please visit the [wiki](https://github.com/ksator/Machine_Learning_with_Python/wiki) for the project documentation.    
+Please visit the [**wiki**](https://github.com/ksator/Machine_Learning_with_Python/wiki) for the project documentation.    
 
 - [What to find in this repository](https://github.com/ksator/Machine_Learning_with_Python/wiki/What-to-find-in-this-repository)
 - [About the Python libraries used in this repo](https://github.com/ksator/Machine_Learning_with_Python/wiki/About-the-Python-libraries-used-in-this-repo)  
@@ -12,5 +12,5 @@ Please visit the [wiki](https://github.com/ksator/Machine_Learning_with_Python/w
 - [Graph a dataset using matplotlib](https://github.com/ksator/Machine_Learning_with_Python/wiki/Graph-a-dataset-using-matplotlib)  
 - [Use k-Fold Cross Validation to evaluate the performance of a trained model](https://github.com/ksator/Machine_Learning_with_Python/wiki/Use-k-Fold-Cross-Validation-to-evaluate-the-performance-of-a-trained-model)  
 - [Remove irrelevant features to reduce overfitting](https://github.com/ksator/Machine_Learning_with_Python/wiki/Remove-irrelevant-features-to-reduce-overfitting)  
-- [transform non numerical labels to numerical labels](https://github.com/ksator/Machine_Learning_with_Python/wiki/transform-non-numerical-labels-to-numerical-labels)  
+- [transform non numerical labels to numerical labels with LabelEncoder](https://github.com/ksator/Machine_Learning_with_Python/wiki/transform-non-numerical-labels-to-numerical-labels-with-LabelEncoder)      
 - [split a column into multiple columns with OneHotEncoder](https://github.com/ksator/Machine_Learning_with_Python/wiki/split-a-column-into-multiple-columns-with-OneHotEncoder)  
