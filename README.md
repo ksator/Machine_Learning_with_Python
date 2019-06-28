@@ -12,6 +12,5 @@ Please visit the [wiki](https://github.com/ksator/Machine_Learning_with_Python/w
 - [Graph a dataset using matplotlib](https://github.com/ksator/Machine_Learning_with_Python/wiki/Graph-a-dataset-using-matplotlib)  
 - [Use k-Fold Cross Validation to evaluate the performance of a trained model](https://github.com/ksator/Machine_Learning_with_Python/wiki/Use-k-Fold-Cross-Validation-to-evaluate-the-performance-of-a-trained-model)  
 - [Remove irrelevant features to reduce overfitting](https://github.com/ksator/Machine_Learning_with_Python/wiki/Remove-irrelevant-features-to-reduce-overfitting)  
-- [Convert text features into integers](https://github.com/ksator/Machine_Learning_with_Python/wiki/convert-text-features-into-integers)  
-
+- [transform non numerical labels to numerical labels](https://github.com/ksator/Machine_Learning_with_Python/wiki/transform-non-numerical-labels-to-numerical-labels)  
 
