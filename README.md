@@ -13,4 +13,4 @@ Please visit the [wiki](https://github.com/ksator/Machine_Learning_with_Python/w
 - [Use k-Fold Cross Validation to evaluate the performance of a trained model](https://github.com/ksator/Machine_Learning_with_Python/wiki/Use-k-Fold-Cross-Validation-to-evaluate-the-performance-of-a-trained-model)  
 - [Remove irrelevant features to reduce overfitting](https://github.com/ksator/Machine_Learning_with_Python/wiki/Remove-irrelevant-features-to-reduce-overfitting)  
 - [transform non numerical labels to numerical labels](https://github.com/ksator/Machine_Learning_with_Python/wiki/transform-non-numerical-labels-to-numerical-labels)  
-
+- [split a column into multiple columns with OneHotEncoder](https://github.com/ksator/Machine_Learning_with_Python/wiki/split-a-column-into-multiple-columns-with-OneHotEncoder)  
