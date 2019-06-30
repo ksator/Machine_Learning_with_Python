@@ -14,3 +14,5 @@ Please visit the [**wiki**](https://github.com/ksator/Machine_Learning_with_Pyth
 - [Remove irrelevant features to reduce overfitting using RFE (Recursive Feature Elimination)](https://github.com/ksator/Machine_Learning_with_Python/wiki/Remove-irrelevant-features-to-reduce-overfitting-using-RFE-(Recursive-Feature-Elimination))  
 - [transform non numerical labels to numerical labels with LabelEncoder](https://github.com/ksator/Machine_Learning_with_Python/wiki/transform-non-numerical-labels-to-numerical-labels-with-LabelEncoder)      
 - [split a column into multiple columns (One Hot Encode)](https://github.com/ksator/Machine_Learning_with_Python/wiki/split-a-column-into-multiple-columns-(One-Hot-Encode))  
+- [data preparation example](https://github.com/ksator/Machine_Learning_with_Python/wiki/data-preparation-example)  
+
