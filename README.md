@@ -1,5 +1,14 @@
-Please visit the [**wiki**](https://github.com/ksator/Machine_Learning_with_Python/wiki) for the project documentation.    
+The python examples cover how to: 
+ - load a labeled dataset
+ - examine the dataset 
+ - manipulate the dataset  
+ - graph the dataset  
+ - use a supervised classification algorithm
+ - train the machine learning algorithm
+ - evaluate the performance of the trained model
+ - use the trained model to make predictions  
 
+Please visit the [**wiki**](https://github.com/ksator/Machine_Learning_with_Python/wiki) for the project documentation. It has a "machine learning with python" tutorial:     
 - [What to find in this repository](https://github.com/ksator/Machine_Learning_with_Python/wiki/What-to-find-in-this-repository)
 - [About the Python libraries used in this repo](https://github.com/ksator/Machine_Learning_with_Python/wiki/About-the-Python-libraries-used-in-this-repo)  
 - [Euclidean distance vs Manhattan distance](https://github.com/ksator/Machine_Learning_with_Python/wiki/Euclidean-distance-vs-Manhattan-distance)  
