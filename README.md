@@ -1,4 +1,4 @@
-The python examples cover how to: 
+The python examples in this repository cover how to: 
  - load a labeled dataset
  - examine the dataset 
  - manipulate the dataset  
